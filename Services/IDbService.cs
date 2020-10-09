@@ -12,5 +12,6 @@ namespace TwitterClone
 		public Messages GetMessageById(int id);
 		public Messages AddMessage(MessageDTO message);
 		public void DeleteMessage(int id);
+		public void UpdateMessage(int id, MessageUpdateDTO text);
 	}
 }

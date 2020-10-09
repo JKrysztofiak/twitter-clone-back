@@ -49,5 +49,17 @@ namespace TwitterClone
 			db.Messages.Remove(msg);
 			db.SaveChanges();
 		}
+
+		public void UpdateMessage(int id, MessageUpdateDTO text)
+		{
+			Console.WriteLine("UPDATING MSG: " + id);
+			var msg = db.Messages.FirstOrDefault<Messages>(x => x.Messageid == id);
+			if(msg.Messageid == id)
+			{
+				msg.Messagetext = text.messageText;
+			}
+			//db.Messages.Update(msg);
+			db.SaveChanges();
+		}
 	}
 }

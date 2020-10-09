@@ -35,10 +35,13 @@ namespace TwitterClone.Controllers
 		}
 
 		//// POST api/<MessagesController>
-		//[HttpPost]
-		//public void Post([FromBody] string value)
-		//{
-		//}
+		[HttpPost("{id}")]
+		public IActionResult UpdateMessage(int id, [FromBody] MessageUpdateDTO value)
+		{
+			Console.WriteLine("UPDATING MSG: " + id + " WITH TEXT: " + value);
+			_dbService.UpdateMessage(id, value);
+			return Ok();
+		}
 
 		// PUT api/<MessagesController>/5
 		[HttpPut]
